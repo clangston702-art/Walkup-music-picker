@@ -12,36 +12,113 @@ const ALL_TEAMS = [
 ];
 
 const MLB_PLAYERS = [
+  // Yankees
   { name:"Aaron Judge", team:"Yankees", song:"Swag Surfin'", artist:"F.L.Y. (Fast Life Yungstaz)", vibe:"Pure swagger — the crowd goes wild the second that bass drops.", moment:"The opening bass hit" },
+  { name:"Austin Wells", team:"Yankees", song:"Whole Lotta Love", artist:"Led Zeppelin", vibe:"Raw rock power — instantly recognizable riff gets the crowd moving.", moment:"The opening guitar riff" },
+  { name:"Jazz Chisholm Jr.", team:"Yankees", song:"Swag Surfin'", artist:"F.L.Y.", vibe:"Pure personality and flair — most exciting walk-up in the game.", moment:"Opening bass hit" },
+  { name:"Giancarlo Stanton", team:"Yankees", song:"Power", artist:"Kanye West", vibe:"Cinematic and massive — matches the biggest home run swing in baseball.", moment:"The opening orchestral hit" },
+  // Mets
   { name:"Francisco Lindor", team:"Mets", song:"My Girl", artist:"The Temptations", vibe:"Whole stadium sings along — pure joy and crowd connection.", moment:"'My girl...' first note" },
   { name:"Pete Alonso", team:"Mets", song:"Layla", artist:"Derek & the Dominos", vibe:"That iconic guitar riff hits instantly — classic rock power.", moment:"The opening guitar riff" },
+  { name:"Juan Soto", team:"Mets", song:"Empire State of Mind", artist:"Jay-Z & Alicia Keys", vibe:"Big-city energy, legendary status — the whole park feels it.", moment:"'In New York...' opening" },
+  { name:"Mark Vientos", team:"Mets", song:"White Horse", artist:"Chris Stapleton", vibe:"The #1 MLB song of 2025 — raw, powerful, unforgettable.", moment:"Opening guitar" },
+  // Dodgers
   { name:"Shohei Ohtani", team:"Dodgers", song:"Feeling Good", artist:"Michael Buble", vibe:"Smooth, confident, legendary — befitting the greatest player alive.", moment:"'Birds flying high...' opening" },
   { name:"Mookie Betts", team:"Dodgers", song:"Affirmations", artist:"Flippa T", vibe:"Positive energy and swag — gets the whole dugout hyped.", moment:"The opening beat" },
-  { name:"Vlad Guerrero Jr.", team:"Blue Jays", song:"Drip Too Hard", artist:"Lil Baby & Gunna", vibe:"Bold, thumping bass — maximum confidence at the plate.", moment:"The first beat drop" },
-  { name:"Juan Soto", team:"Mets", song:"Empire State of Mind", artist:"Jay-Z & Alicia Keys", vibe:"Big-city energy, legendary status — the whole park feels it.", moment:"'In New York...' opening" },
+  { name:"Freddie Freeman", team:"Dodgers", song:"Mr. Brightside", artist:"The Killers", vibe:"Crowd goes crazy — everyone knows every word of this one.", moment:"'Coming out of my cage...'" },
+  { name:"Teoscar Hernandez", team:"Dodgers", song:"MONACO", artist:"Bad Bunny", vibe:"Latin swagger and elite energy — impossible to ignore.", moment:"First drop" },
+  // Phillies
+  { name:"Bryce Harper", team:"Phillies", song:"God's Plan", artist:"Drake", vibe:"Smooth superstar energy — walks up like he owns the stadium.", moment:"Opening piano" },
+  { name:"Trea Turner", team:"Phillies", song:"Can't Hold Us", artist:"Macklemore & Ryan Lewis", vibe:"Explosive, joyful speed — perfect for the fastest man on the field.", moment:"The horn-blasting chorus" },
+  { name:"Nick Castellanos", team:"Phillies", song:"Don't Stop Til You Get Enough", artist:"Michael Jackson", vibe:"Smooth funky energy — and he's famous for homering to it!", moment:"The iconic opening" },
+  { name:"Kyle Schwarber", team:"Phillies", song:"Thunderstruck", artist:"AC/DC", vibe:"Pure power — a slugger's anthem that shakes the whole stadium.", moment:"'Thunder...' opening" },
+  // Braves
   { name:"Ronald Acuna Jr.", team:"Braves", song:"Los Illuminaty", artist:"Rochy RD", vibe:"High-energy Latin trap — electric and intimidating.", moment:"The opening drop" },
+  { name:"Matt Olson", team:"Braves", song:"White Horse", artist:"Chris Stapleton", vibe:"Gritty and powerful — a first baseman's commanding entrance.", moment:"Opening guitar" },
+  { name:"Marcell Ozuna", team:"Braves", song:"Titi Me Pregunto", artist:"Bad Bunny", vibe:"Latin energy and swagger — gets the crowd immediately.", moment:"Opening beat" },
+  // Astros
+  { name:"Yordan Alvarez", team:"Astros", song:"Titi Me Pregunto", artist:"Bad Bunny", vibe:"Massive Latin energy — the whole park gets loud immediately.", moment:"Opening beat" },
+  { name:"Jose Altuve", team:"Astros", song:"Gasolina", artist:"Daddy Yankee", vibe:"Classic Latin energy — proves great things come in small packages.", moment:"Opening beat" },
+  { name:"Alex Bregman", team:"Red Sox", song:"God's Country", artist:"Blake Shelton", vibe:"Country swagger with elite confidence — big game energy.", moment:"The first chord" },
+  // Red Sox
+  { name:"Rafael Devers", team:"Red Sox", song:"MONACO", artist:"Bad Bunny", vibe:"Dominican pride and swagger — Fenway goes crazy.", moment:"First drop" },
+  { name:"Triston Casas", team:"Red Sox", song:"Whole Lotta Love", artist:"Led Zeppelin", vibe:"Big power hitter energy — that riff demands attention.", moment:"The opening riff" },
+  // Blue Jays
+  { name:"Vlad Guerrero Jr.", team:"Blue Jays", song:"Drip Too Hard", artist:"Lil Baby & Gunna", vibe:"Bold, thumping bass — maximum confidence at the plate.", moment:"The first beat drop" },
+  { name:"George Springer", team:"Blue Jays", song:"Lose Yourself", artist:"Eminem", vibe:"One opportunity — total focus and fire before every at-bat.", moment:"The opening piano" },
+  // Guardians
+  { name:"Jose Ramirez", team:"Guardians", song:"Leyenda", artist:"Traditional", vibe:"Deep roots, fierce pride — sets a warrior tone at the plate.", moment:"Opening notes" },
+  { name:"Steven Kwan", team:"Guardians", song:"Mr. Brightside", artist:"The Killers", vibe:"High energy crowd singalong — Cleveland loves this one.", moment:"'Coming out of my cage...'" },
+  // Cubs
   { name:"Justin Turner", team:"Cubs", song:"Top Gun Anthem", artist:"Harold Faltermeyer", vibe:"Cinematic, dramatic — that opening bell creates instant chills.", moment:"The iconic opening bell tone" },
-  { name:"Austin Wells", team:"Yankees", song:"Whole Lotta Love", artist:"Led Zeppelin", vibe:"Raw rock power — instantly recognizable riff gets the crowd moving.", moment:"The opening guitar riff" },
   { name:"Pete Crow-Armstrong", team:"Cubs", song:"Swag Surfin'", artist:"F.L.Y.", vibe:"High energy, youthful swagger — perfect for an exciting young star.", moment:"Opening bass drop" },
   { name:"Kyle Tucker", team:"Cubs", song:"HUMBLE.", artist:"Kendrick Lamar", vibe:"Controlled intensity — quiet confidence before explosive power.", moment:"'Sit down...' opening" },
-  { name:"Gerardo Parra", team:"Legend", song:"Baby Shark", artist:"Pinkfong", vibe:"The greatest walk-up of all time — pure joy and crowd participation!", moment:"'Baby shark, doo doo doo...'" },
-  { name:"Blake Snell", team:"Giants", song:"God's Country", artist:"Blake Shelton", vibe:"Big, anthemic country — commanding presence on the mound.", moment:"The opening chord" },
-  { name:"Jose Ramirez", team:"Guardians", song:"Leyenda", artist:"Traditional", vibe:"Deep roots, fierce pride — sets a warrior tone at the plate.", moment:"Opening notes" },
-  { name:"Freddie Freeman", team:"Dodgers", song:"Mr. Brightside", artist:"The Killers", vibe:"Crowd goes crazy — everyone knows every word of this one.", moment:"'Coming out of my cage...'" },
-  { name:"Bryce Harper", team:"Phillies", song:"God's Plan", artist:"Drake", vibe:"Smooth superstar energy — walks up like he owns the stadium.", moment:"Opening piano" },
+  { name:"Seiya Suzuki", team:"Cubs", song:"Mugen No Kanata E", artist:"Traditional Japanese", vibe:"Unique, personal, cultural pride — Wrigley loves it.", moment:"Opening notes" },
+  // Cardinals
+  { name:"Nolan Arenado", team:"Cardinals", song:"White Horse", artist:"Chris Stapleton", vibe:"Smooth grit — a third baseman's power anthem.", moment:"Opening guitar" },
+  { name:"Paul Goldschmidt", team:"Cardinals", song:"Enter Sandman", artist:"Metallica", vibe:"Veteran presence and pure intimidation at the plate.", moment:"Quiet guitar before the explosion" },
+  // Padres
   { name:"Manny Machado", team:"Padres", song:"MONACO", artist:"Bad Bunny", vibe:"Latin swagger meets elite confidence — pure presence.", moment:"First drop" },
-  { name:"Yordan Alvarez", team:"Astros", song:"Titi Me Pregunto", artist:"Bad Bunny", vibe:"Massive Latin energy — the whole park gets loud immediately.", moment:"Opening beat" },
-  { name:"Mike Trout", team:"Angels", song:"Thunderstruck", artist:"AC/DC", vibe:"Pure power and electricity — fitting for the greatest of his generation.", moment:"'Thunder...' opening" },
-  { name:"Corey Seager", team:"Rangers", song:"White Horse", artist:"Chris Stapleton", vibe:"The #1 MLB walk-up of 2025 — gritty, powerful, commanding.", moment:"Opening guitar" },
-  { name:"Trea Turner", team:"Phillies", song:"Can't Hold Us", artist:"Macklemore & Ryan Lewis", vibe:"Explosive, joyful speed — perfect for the fastest man on the field.", moment:"The horn-blasting chorus" },
-  { name:"Elly De La Cruz", team:"Reds", song:"Drip Too Hard", artist:"Lil Baby & Gunna", vibe:"Young phenom energy — bold, confident, electrifying.", moment:"First beat drop" },
+  { name:"Fernando Tatis Jr.", team:"Padres", song:"Titi Me Pregunto", artist:"Bad Bunny", vibe:"Electric showman energy — Petco Park erupts every time.", moment:"Opening beat" },
+  { name:"Xander Bogaerts", team:"Padres", song:"Drip Too Hard", artist:"Lil Baby & Gunna", vibe:"Confident veteran energy — smooth and powerful.", moment:"First beat drop" },
+  // Giants
+  { name:"Blake Snell", team:"Giants", song:"God's Country", artist:"Blake Shelton", vibe:"Big, anthemic country — commanding presence on the mound.", moment:"The opening chord" },
+  { name:"Matt Chapman", team:"Giants", song:"Thunderstruck", artist:"AC/DC", vibe:"Pure energy — one of baseball's best defensive players announced.", moment:"'Thunder...' opening" },
+  // Mariners
+  { name:"Julio Rodriguez", team:"Mariners", song:"FEFE", artist:"6ix9ine & Nicki Minaj", vibe:"Young superstar energy — loud, bold, electric.", moment:"Opening beat" },
+  { name:"Cal Raleigh", team:"Mariners", song:"Hell's Bells", artist:"AC/DC", vibe:"Dark, powerful — the perfect catcher walk-up song.", moment:"The opening bell toll" },
+  // Orioles
   { name:"Gunnar Henderson", team:"Orioles", song:"HUMBLE.", artist:"Kendrick Lamar", vibe:"Quiet superstar confidence — let the bat do the talking.", moment:"Opening beat" },
-  { name:"Jazz Chisholm Jr.", team:"Yankees", song:"Swag Surfin'", artist:"F.L.Y.", vibe:"Pure personality and flair — most exciting walk-up in the game.", moment:"Opening bass hit" },
+  { name:"Adley Rutschman", team:"Orioles", song:"White Horse", artist:"Chris Stapleton", vibe:"Best catcher in baseball — gritty and commanding.", moment:"Opening guitar" },
+  { name:"Anthony Santander", team:"Orioles", song:"Titi Me Pregunto", artist:"Bad Bunny", vibe:"Venezuelan power — Camden Yards shakes on every at-bat.", moment:"Opening beat" },
+  // Rangers
+  { name:"Corey Seager", team:"Rangers", song:"White Horse", artist:"Chris Stapleton", vibe:"The #1 MLB walk-up of 2025 — gritty, powerful, commanding.", moment:"Opening guitar" },
+  { name:"Evan Carter", team:"Rangers", song:"Mr. Carter", artist:"Lil Wayne & Jay-Z", vibe:"Play on his name — electric young energy in the lineup.", moment:"'Mr. Carter...' opening" },
+  { name:"Wyatt Langford", team:"Rangers", song:"Everyone's An Outlaw", artist:"Bryan Martin", vibe:"Country outlaw energy — pure Texas swagger.", moment:"Opening guitar" },
+  { name:"Marcus Semien", team:"Rangers", song:"God's Country", artist:"Blake Shelton", vibe:"Consistent excellence — reliable as the opening chord.", moment:"The first chord" },
+  // Twins
+  { name:"Byron Buxton", team:"Twins", song:"Return of the Mack", artist:"Mark Morrison", vibe:"When healthy he's a superstar — this song announces his return every time.", moment:"'Return of the Mack...'" },
+  { name:"Carlos Correa", team:"Twins", song:"MONACO", artist:"Bad Bunny", vibe:"Puerto Rican pride and elite shortstop energy.", moment:"First drop" },
+  // Royals
   { name:"Bobby Witt Jr.", team:"Royals", song:"God's Country", artist:"Blake Shelton", vibe:"Kansas heart with superstar swagger — crowd loves it.", moment:"The first chord" },
+  { name:"Salvador Perez", team:"Royals", song:"Gasolina", artist:"Daddy Yankee", vibe:"Venezuelan legend — this song is pure fiesta energy.", moment:"Opening beat" },
+  // Tigers
+  { name:"Riley Greene", team:"Tigers", song:"Can't Hold Us", artist:"Macklemore & Ryan Lewis", vibe:"Young speedster energy — explosive and joyful.", moment:"The horn-blasting chorus" },
+  { name:"Spencer Torkelson", team:"Tigers", song:"Enter Sandman", artist:"Metallica", vibe:"Power hitter intimidation — pure menace at the plate.", moment:"Quiet guitar before explosion" },
+  // Brewers
   { name:"Jackson Chourio", team:"Brewers", song:"MONACO", artist:"Bad Bunny", vibe:"Young Latin star energy — electric and confident.", moment:"First drop" },
+  { name:"Christian Yelich", team:"Brewers", song:"White Horse", artist:"Chris Stapleton", vibe:"Former MVP energy — gritty and powerful.", moment:"Opening guitar" },
+  // Reds
+  { name:"Elly De La Cruz", team:"Reds", song:"Drip Too Hard", artist:"Lil Baby & Gunna", vibe:"Young phenom energy — bold, confident, electrifying.", moment:"First beat drop" },
+  { name:"Hunter Greene", team:"Reds", song:"HUMBLE.", artist:"Kendrick Lamar", vibe:"The coolest pitcher in baseball — controlled intensity.", moment:"Opening beat" },
+  // Pirates
   { name:"Paul Skenes", team:"Pirates", song:"Enter Sandman", artist:"Metallica", vibe:"Ace pitcher energy — pure intimidation walking to the mound.", moment:"Quiet guitar before the explosion" },
+  { name:"Oneil Cruz", team:"Pirates", song:"Titi Me Pregunto", artist:"Bad Bunny", vibe:"Dominican giant with electric energy — tallest shortstop ever.", moment:"Opening beat" },
+  // Rays
   { name:"Junior Caminero", team:"Rays", song:"Taki Taki", artist:"DJ Snake", vibe:"Explosive young talent — big Latin energy at the plate.", moment:"Opening drop" },
+  { name:"Yandy Diaz", team:"Rays", song:"MONACO", artist:"Bad Bunny", vibe:"Cuban veteran — smart, patient, powerful at the plate.", moment:"First drop" },
+  // Diamondbacks
   { name:"Corbin Carroll", team:"Diamondbacks", song:"Levitating", artist:"Dua Lipa", vibe:"Smooth, effortless cool — floats into the batter's box.", moment:"Opening synth" },
+  { name:"Ketel Marte", team:"Diamondbacks", song:"Titi Me Pregunto", artist:"Bad Bunny", vibe:"Switch-hitting Dominican star — pure energy every at-bat.", moment:"Opening beat" },
+  // Rockies
+  { name:"Ezequiel Tovar", team:"Rockies", song:"MONACO", artist:"Bad Bunny", vibe:"Young Venezuelan shortstop — smooth and confident.", moment:"First drop" },
+  { name:"Ryan McMahon", team:"Rockies", song:"White Horse", artist:"Chris Stapleton", vibe:"Colorado grit — fits the mountain vibe perfectly.", moment:"Opening guitar" },
+  // Nationals
+  { name:"James Wood", team:"Nationals", song:"God's Plan", artist:"Drake", vibe:"Top prospect energy — smooth confidence announcing a future star.", moment:"Opening piano" },
+  { name:"CJ Abrams", team:"Nationals", song:"Can't Hold Us", artist:"Macklemore & Ryan Lewis", vibe:"Electric young speedster — explosive energy every time.", moment:"The horn-blasting chorus" },
+  // Marlins
+  { name:"Jazz Chisholm Jr.", team:"Marlins", song:"Swag Surfin'", artist:"F.L.Y.", vibe:"Before the Yankees — pure Bahamian flair and fun.", moment:"Opening bass hit" },
+  { name:"Luis Arraez", team:"Marlins", song:"Gasolina", artist:"Daddy Yankee", vibe:"The best contact hitter alive — smooth and consistent.", moment:"Opening beat" },
+  // Athletics
+  { name:"Brent Rooker", team:"Athletics", song:"Thunderstruck", artist:"AC/DC", vibe:"Power hitter breakthrough — pure electricity.", moment:"'Thunder...' opening" },
+  { name:"Lawrence Butler", team:"Athletics", song:"HUMBLE.", artist:"Kendrick Lamar", vibe:"Young A's star — quiet confidence and serious power.", moment:"Opening beat" },
+  // Angels
+  { name:"Mike Trout", team:"Angels", song:"Thunderstruck", artist:"AC/DC", vibe:"Pure power and electricity — fitting for the greatest of his generation.", moment:"'Thunder...' opening" },
+  { name:"Zach Neto", team:"Angels", song:"White Horse", artist:"Chris Stapleton", vibe:"Emerging young star — gritty and determined.", moment:"Opening guitar" },
+  // Legend
+  { name:"Gerardo Parra", team:"Legend", song:"Baby Shark", artist:"Pinkfong", vibe:"The greatest walk-up of all time — pure joy and crowd participation!", moment:"'Baby shark, doo doo doo...'" },
+  { name:"Ken Griffey Jr.", team:"Legend", song:"U Can't Touch This", artist:"MC Hammer", vibe:"The Kid's legendary 90s vibe — pure nostalgia and joy.", moment:"'STOP — Hammer time!'" },
+  { name:"Derek Jeter", team:"Legend", song:"Empire State of Mind", artist:"Jay-Z & Alicia Keys", vibe:"The Captain — New York royalty, timeless and legendary.", moment:"'In New York...' opening" },
 ];
 
 const SONGS = {
@@ -127,20 +204,26 @@ const colors = ["#fde047","#86efac","#60a5fa"];
 
 function MusicButtons({ title, artist }) {
   const q = encodeURIComponent(title + " " + artist);
+  const ytQ = encodeURIComponent(title + " " + artist + " official audio");
   return (
-    <div style={{ display:"flex", gap:"0.4rem", marginTop:"0.5rem", flexWrap:"wrap" }}>
-      <a href={"https://open.spotify.com/search/" + q} target="_blank" rel="noreferrer"
-        style={{ display:"inline-flex", alignItems:"center", gap:"0.3rem", padding:"0.3rem 0.65rem", borderRadius:999, fontSize:"0.7rem", fontWeight:700, background:"rgba(30,215,96,0.15)", border:"1px solid rgba(30,215,96,0.4)", color:"#1ed760", textDecoration:"none" }}>
-        ▶ Spotify
-      </a>
-      <a href={"https://www.youtube.com/results?search_query=" + q} target="_blank" rel="noreferrer"
-        style={{ display:"inline-flex", alignItems:"center", gap:"0.3rem", padding:"0.3rem 0.65rem", borderRadius:999, fontSize:"0.7rem", fontWeight:700, background:"rgba(255,0,0,0.12)", border:"1px solid rgba(255,0,0,0.35)", color:"#ff6b6b", textDecoration:"none" }}>
-        ▶ YouTube
-      </a>
-      <a href={"https://music.apple.com/search?term=" + q} target="_blank" rel="noreferrer"
-        style={{ display:"inline-flex", alignItems:"center", gap:"0.3rem", padding:"0.3rem 0.65rem", borderRadius:999, fontSize:"0.7rem", fontWeight:700, background:"rgba(252,60,68,0.12)", border:"1px solid rgba(252,60,68,0.35)", color:"#fc3c44", textDecoration:"none" }}>
-        ▶ Apple Music
-      </a>
+    <div style={{ marginTop:"0.6rem" }}>
+      <div style={{ fontSize:"0.65rem", color:"rgba(134,239,172,0.6)", marginBottom:"0.35rem", letterSpacing:"0.05em", textTransform:"uppercase" }}>🎵 Find &amp; play this song:</div>
+      <div style={{ display:"flex", gap:"0.4rem", flexWrap:"wrap" }}>
+        <a href={"https://www.youtube.com/results?search_query=" + ytQ} target="_blank" rel="noreferrer"
+          style={{ display:"inline-flex", alignItems:"center", gap:"0.3rem", padding:"0.35rem 0.75rem", borderRadius:999, fontSize:"0.72rem", fontWeight:700, background:"rgba(255,0,0,0.15)", border:"1.5px solid rgba(255,80,80,0.5)", color:"#ff6b6b", textDecoration:"none" }}>
+          ▶ YouTube
+        </a>
+        <a href={"spotify:search:" + encodeURIComponent(title + " " + artist)} target="_blank" rel="noreferrer"
+          onMouseOver={e => e.currentTarget.href = "spotify:search:" + encodeURIComponent(title + " " + artist)}
+          style={{ display:"inline-flex", alignItems:"center", gap:"0.3rem", padding:"0.35rem 0.75rem", borderRadius:999, fontSize:"0.72rem", fontWeight:700, background:"rgba(30,215,96,0.15)", border:"1.5px solid rgba(30,215,96,0.45)", color:"#1ed760", textDecoration:"none" }}>
+          ▶ Spotify App
+        </a>
+        <a href={"https://music.apple.com/search?term=" + q} target="_blank" rel="noreferrer"
+          style={{ display:"inline-flex", alignItems:"center", gap:"0.3rem", padding:"0.35rem 0.75rem", borderRadius:999, fontSize:"0.72rem", fontWeight:700, background:"rgba(252,60,68,0.12)", border:"1.5px solid rgba(252,60,68,0.4)", color:"#fc3c44", textDecoration:"none" }}>
+          ▶ Apple Music
+        </a>
+      </div>
+      <div style={{ fontSize:"0.62rem", color:"rgba(134,239,172,0.4)", marginTop:"0.3rem", fontStyle:"italic" }}>Tap to search — then hit play!</div>
     </div>
   );
 }
